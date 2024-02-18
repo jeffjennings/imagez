@@ -1,2 +1,2 @@
-# py_repo
-A generic template for a Python repository
+# imagez
+Various routines for image manipulation and analysis.
