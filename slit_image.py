@@ -28,3 +28,19 @@ if target_fps > fps:
     target_fps = fps
 decimation_factor = round(fps / target_fps)
 
+# frames = []
+slits = []
+counter = 0
+for ii in range(nframe - 1):
+    if ii % decimation_factor == 0:
+        print(f"\rframe {ii}", end='', flush=True)
+        _, frame = vid.read()
+        # flip BGR to RGB
+        frame = frame[:,:,::-1]
+        # build slit image
+        if rc == 'row':
+            slits.append(frame[idx,:,:])
+        else:
+            slits.append(frame[:,idx,:])
+        
+        counter += 1
