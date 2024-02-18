@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 
-vid_file = 'roses.mp4'
 vid_file = 'control2.mp4'
 
 vid = cv2.VideoCapture(vid_file)
