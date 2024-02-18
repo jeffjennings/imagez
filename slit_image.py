@@ -42,5 +42,10 @@ for ii in range(nframe - 1):
             slits.append(frame[idx,:,:])
         else:
             slits.append(frame[:,idx,:])
+
+        # store frame halfway through video
+        tol = 0.01
+        if 1 - tol <= ii / (nframe / 2) <= 1 + tol:
+            framemid = frame
         
         counter += 1
