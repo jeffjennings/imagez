@@ -19,3 +19,12 @@ plt.imshow(frame0)
 plt.title('Frame 0')
 plt.show()
 
+# user selects row or column of each frame used to make slit image
+rc = input("Slice on 'col' or 'row'?\n")
+idx = int(input("Slice index?\n"))
+target_fps = int(input("Sampling FPS?\n"))
+if target_fps > fps:
+    print("Your selected sampling FPS exceeds video FPS. Defaulting to video FPS.")
+    target_fps = fps
+decimation_factor = round(fps / target_fps)
+
