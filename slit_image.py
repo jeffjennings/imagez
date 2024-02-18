@@ -49,3 +49,8 @@ for ii in range(nframe - 1):
             framemid = frame
         
         counter += 1
+
+# flip x, y slit image dimensions
+if rc == 'col':
+    slits = np.transpose(slits, (1, 0, 2))
+
