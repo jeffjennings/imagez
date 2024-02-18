@@ -54,3 +54,16 @@ for ii in range(nframe - 1):
 if rc == 'col':
     slits = np.transpose(slits, (1, 0, 2))
 
+fig, ax = plt.subplots(2, 2)
+ax = ax.ravel()
+fig.set_size_inches(12,12)
+ax[0].imshow(frame0)
+ax[0].set_title('First frame')
+ax[1].imshow(framemid)
+ax[1].set_title('Median frame')
+ax[2].imshow(frame)
+ax[2].set_title('Last frame')
+ax[3].imshow(slits, origin='upper')
+ax[3].set_title(f'Slit image ({rc} {idx} over {counter} frames)')
+plt.tight_layout()
+plt.show(block=False)
